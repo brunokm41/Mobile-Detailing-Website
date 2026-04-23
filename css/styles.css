@@ -727,7 +727,7 @@ footer {
 @media (max-width: 900px) {
   nav                           { padding: 1rem 1.5rem; }
   .nav-links                    { display: none; }
-  .hero                         { min-height: 100svh; padding: 8rem 1.5rem 4rem; }
+  .hero                         { min-height: 100svh; padding: 8rem 1.5rem 5rem; align-items: center; }
   section                       { padding: 4rem 1.5rem; }
   .stats-bar                    { padding: 1.5rem; gap: 2rem; }
   .services-grid                { grid-template-columns: 1fr; }
