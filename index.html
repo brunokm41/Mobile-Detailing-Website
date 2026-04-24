@@ -186,13 +186,32 @@
   <section id="services">
     <div class="section-eyebrow"><span>What We Offer</span></div>
     <h2 class="section-title">Car Detailing Services in Tauranga</h2>
-    <p class="section-sub">Every package is performed on-location across Tauranga, Mount Maunganui & Papamoa using professional-grade products. No shortcuts, no rushed jobs.</p>
+    <p class="section-sub">Select your vehicle size to see pricing. All packages performed on-location across Tauranga, Mount Maunganui & Papamoa.</p>
 
-    <div class="services-grid">
+    <!-- Vehicle Size Tabs -->
+    <div class="vehicle-tabs">
+      <button class="vehicle-tab active" onclick="switchTab(event, 'small')">
+        <span class="tab-icon">🚗</span>
+        <span class="tab-label">Small</span>
+        <span class="tab-sub">Hatchback, Sedan</span>
+      </button>
+      <button class="vehicle-tab" onclick="switchTab(event, 'medium')">
+        <span class="tab-icon">🚙</span>
+        <span class="tab-label">Medium</span>
+        <span class="tab-sub">SUV, Wagon</span>
+      </button>
+      <button class="vehicle-tab" onclick="switchTab(event, 'large')">
+        <span class="tab-icon">🛻</span>
+        <span class="tab-label">Large</span>
+        <span class="tab-sub">Ute, Van, 4WD</span>
+      </button>
+    </div>
 
+    <!-- Small Vehicles -->
+    <div class="services-grid tab-panel active" id="tab-small">
       <div class="service-card">
         <span class="service-icon">✦</span>
-        <h3 class="service-name">Express Car Wash Tauranga</h3>
+        <h3 class="service-name">Express Wash</h3>
         <p class="service-desc">A thorough exterior clean to freshen up your vehicle fast.</p>
         <ul class="service-includes">
           <li>Hand wash & rinse</li>
@@ -202,11 +221,10 @@
         </ul>
         <div class="service-price">$80 <span>/ starting from</span></div>
       </div>
-
       <div class="service-card featured">
         <div class="featured-badge">Most Popular</div>
         <span class="service-icon">◈</span>
-        <h3 class="service-name">Full Car Detail Tauranga</h3>
+        <h3 class="service-name">Full Detail</h3>
         <p class="service-desc">Inside and out — the complete treatment for a truly clean car.</p>
         <ul class="service-includes">
           <li>Full exterior hand wash</li>
@@ -217,10 +235,9 @@
         </ul>
         <div class="service-price">$180 <span>/ starting from</span></div>
       </div>
-
       <div class="service-card">
         <span class="service-icon">❖</span>
-        <h3 class="service-name">Premium Detail & Paint Correction</h3>
+        <h3 class="service-name">Premium Detail</h3>
         <p class="service-desc">The works — paint correction, protection, and perfection.</p>
         <ul class="service-includes">
           <li>Everything in Full Detail</li>
@@ -231,8 +248,94 @@
         </ul>
         <div class="service-price">$320 <span>/ starting from</span></div>
       </div>
-
     </div>
+
+    <!-- Medium Vehicles -->
+    <div class="services-grid tab-panel" id="tab-medium">
+      <div class="service-card">
+        <span class="service-icon">✦</span>
+        <h3 class="service-name">Express Wash</h3>
+        <p class="service-desc">A thorough exterior clean to freshen up your vehicle fast.</p>
+        <ul class="service-includes">
+          <li>Hand wash & rinse</li>
+          <li>Wheel & tyre clean</li>
+          <li>Window wipe-down</li>
+          <li>Door jamb wipe</li>
+        </ul>
+        <div class="service-price">$100 <span>/ starting from</span></div>
+      </div>
+      <div class="service-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <span class="service-icon">◈</span>
+        <h3 class="service-name">Full Detail</h3>
+        <p class="service-desc">Inside and out — the complete treatment for a truly clean car.</p>
+        <ul class="service-includes">
+          <li>Full exterior hand wash</li>
+          <li>Interior vacuum & wipe-down</li>
+          <li>Leather / upholstery clean</li>
+          <li>Glass polish (all windows)</li>
+          <li>Tyre shine & trim dress</li>
+        </ul>
+        <div class="service-price">$220 <span>/ starting from</span></div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">❖</span>
+        <h3 class="service-name">Premium Detail</h3>
+        <p class="service-desc">The works — paint correction, protection, and perfection.</p>
+        <ul class="service-includes">
+          <li>Everything in Full Detail</li>
+          <li>Clay bar decontamination</li>
+          <li>Machine polish</li>
+          <li>Carnauba wax protection</li>
+          <li>Engine bay clean</li>
+        </ul>
+        <div class="service-price">$380 <span>/ starting from</span></div>
+      </div>
+    </div>
+
+    <!-- Large Vehicles -->
+    <div class="services-grid tab-panel" id="tab-large">
+      <div class="service-card">
+        <span class="service-icon">✦</span>
+        <h3 class="service-name">Express Wash</h3>
+        <p class="service-desc">A thorough exterior clean to freshen up your vehicle fast.</p>
+        <ul class="service-includes">
+          <li>Hand wash & rinse</li>
+          <li>Wheel & tyre clean</li>
+          <li>Window wipe-down</li>
+          <li>Door jamb wipe</li>
+        </ul>
+        <div class="service-price">$120 <span>/ starting from</span></div>
+      </div>
+      <div class="service-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <span class="service-icon">◈</span>
+        <h3 class="service-name">Full Detail</h3>
+        <p class="service-desc">Inside and out — the complete treatment for a truly clean car.</p>
+        <ul class="service-includes">
+          <li>Full exterior hand wash</li>
+          <li>Interior vacuum & wipe-down</li>
+          <li>Leather / upholstery clean</li>
+          <li>Glass polish (all windows)</li>
+          <li>Tyre shine & trim dress</li>
+        </ul>
+        <div class="service-price">$260 <span>/ starting from</span></div>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">❖</span>
+        <h3 class="service-name">Premium Detail</h3>
+        <p class="service-desc">The works — paint correction, protection, and perfection.</p>
+        <ul class="service-includes">
+          <li>Everything in Full Detail</li>
+          <li>Clay bar decontamination</li>
+          <li>Machine polish</li>
+          <li>Carnauba wax protection</li>
+          <li>Engine bay clean</li>
+        </ul>
+        <div class="service-price">$440 <span>/ starting from</span></div>
+      </div>
+    </div>
+
   </section>
 
 

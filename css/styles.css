@@ -331,13 +331,62 @@ section { padding: 6rem 4rem; }
 
 #services { background: var(--dark-2); }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* Vehicle size tabs */
+.vehicle-tabs {
+  display: flex;
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
   margin-top: 3.5rem;
+}
+ 
+.vehicle-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1.25rem 1rem;
+  background: var(--dark-3);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+ 
+.vehicle-tab:hover { background: var(--dark-4); }
+ 
+.vehicle-tab.active {
+  background: var(--dark);
+  box-shadow: inset 0 -3px 0 var(--gold);
+}
+ 
+.tab-icon { font-size: 1.4rem; }
+ 
+.tab-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+ 
+.vehicle-tab.active .tab-label { color: var(--gold); }
+ 
+.tab-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+ 
+/* Tab panels */
+.tab-panel { display: none; }
+.tab-panel.active { display: grid; }
+
+.services-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-top: none;
 }
 
 .service-card {
@@ -732,6 +781,9 @@ footer {
   section                       { padding: 4rem 1.5rem; }
   .stats-bar                    { padding: 1.5rem; gap: 2rem; }
   .services-grid                { grid-template-columns: 1fr; }
+  .vehicle-tabs                 { flex-direction: row; }
+  .vehicle-tab                  { padding: 1rem 0.5rem; }
+  .tab-sub                      { display: none; }
   .service-card.featured        { margin: 0; }
   .testimonials-grid            { grid-template-columns: 1fr; }
   .contact-layout               { grid-template-columns: 1fr; gap: 3rem; }
