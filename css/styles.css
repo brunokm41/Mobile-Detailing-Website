@@ -283,6 +283,77 @@ nav {
 
 
 /* ============================================================
+   4b. LOGO TICKER
+   ============================================================ */
+
+.logo-ticker {
+  background: var(--dark-3);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.75rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fade edges left and right */
+.logo-ticker::before,
+.logo-ticker::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.logo-ticker::before {
+  left: 0;
+  background: linear-gradient(to right, var(--dark-3), transparent);
+}
+.logo-ticker::after {
+  right: 0;
+  background: linear-gradient(to left, var(--dark-3), transparent);
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  width: max-content;
+  animation: ticker-scroll 25s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ticker-item img {
+  height: 36px;
+  width: auto;
+  opacity: 0.5;
+  filter: grayscale(100%) brightness(1.5);
+  transition: opacity 0.2s, filter 0.2s;
+}
+
+.ticker-item img:hover {
+  opacity: 1;
+  filter: grayscale(0%) brightness(1);
+}
+
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* ============================================================
    5. SECTION SHARED STYLES
    ============================================================ */
 
@@ -293,6 +364,7 @@ section { padding: 6rem 4rem; }
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1rem;
+  justify-content: center;
 }
 .section-eyebrow span {
   font-size: 0.75rem;
@@ -307,6 +379,13 @@ section { padding: 6rem 4rem; }
   height: 1px;
   background: var(--gold);
 }
+.section-eyebrow::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+}
 
 .section-title {
   font-family: 'Bebas Neue', sans-serif;
@@ -315,13 +394,15 @@ section { padding: 6rem 4rem; }
   color: var(--text);
   margin-bottom: 1rem;
   line-height: 1.05;
+  text-align: center;
 }
 
 .section-sub {
   color: var(--text-muted);
   font-size: 0.97rem;
-  max-width: 440px;
-  margin-bottom: 3.5rem;
+  max-width: 660px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
 }
 
 
