@@ -103,6 +103,59 @@ nav {
 }
 .nav-cta:hover { background: var(--gold); color: var(--dark); }
 
+/* Nav dropdown */
+.nav-dropdown { position: relative; }
+
+.nav-dropdown-toggle { cursor: pointer; }
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 0.75rem;
+  background: transparent;
+  list-style: none;
+  min-width: 220px;
+  z-index: 200;
+}
+
+.dropdown-menu::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0.75rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--dark-2);
+  border: 1px solid var(--border);
+  z-index: -1;
+}
+
+.dropdown-menu li { position: relative; z-index: 1; }
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted) !important;
+  text-transform: none !important;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.15s, color 0.15s;
+}
+
+.dropdown-menu li:last-child a { border-bottom: none; }
+
+.dropdown-menu li a:hover {
+  background: var(--dark-3);
+  color: var(--gold) !important;
+}
+
+.nav-dropdown:hover .dropdown-menu { display: block; }
+
 
 /* ============================================================
    3. HERO
