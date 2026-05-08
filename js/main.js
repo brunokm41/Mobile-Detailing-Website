@@ -29,8 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('.nav-links a');
   navLinks.forEach(function(link) {
     link.addEventListener('click', function() {
-      const links = document.querySelector('.nav-links');
-      links.style.display = 'none';
+      if (window.innerWidth <= 960) {
+        const links = document.querySelector('.nav-links');
+        links.style.display = 'none';
+      }
     });
   });
 });
