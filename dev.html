@@ -90,10 +90,11 @@
 <!-- ====== HERO ====== -->
 <section class="hero">
   <div class="hero-inner">
-    <p class="hero-location">Tauranga &nbsp;·&nbsp; Mount Maunganui &nbsp;·&nbsp; Bay of Plenty</p>
+    
     <img src="images/new_logo_vertical.svg" alt="Mobile Detailing Tauranga" class="hero-logo" />
-    <h1 class="hero-heading">We Come<br/><em>To You.</em></h1>
-    <p class="hero-sub">Professional mobile car detailing across Tauranga, Mount Maunganui & Papamoa. Showroom results delivered to your door.</p>
+    <h1 class="hero-heading">Detailed<br/><em>To Be Admired.</em></h1>
+    <!-- <p class="hero-sub">Professional mobile car detailing across Tauranga, Mount Maunganui & Papamoa. Showroom results delivered to your door.</p> -->
+    <p class="hero-location">Tauranga &nbsp;·&nbsp; Mount Maunganui &nbsp;·&nbsp; Bay of Plenty</p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Book a Detail</a>
       <a href="detailing.html" class="btn-ghost">View Services</a>
@@ -104,6 +105,31 @@
     <div class="hero-scroll-line"></div>
   </div>
 </section>
+
+
+<!-- ====== CLIENT LOGO TICKER ====== -->
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-item"><img src="images/clients/logo-1.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-2.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-3.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-4.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-5.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-6.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-7.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-8.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-9.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-1.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-2.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-3.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-4.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-5.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-6.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-7.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-8.png" alt="Client" /></div>
+    <div class="ticker-item"><img src="images/clients/logo-9.png" alt="Client" /></div>
+  </div>
+</div>
 
 
 <!-- ====== STATS ====== -->
@@ -342,6 +368,52 @@
 </footer>
 
 <script src="js/main.js"></script>
+
+<script>
+(function() {
+  var track = document.querySelector('.ticker-track');
+  if (!track) return;
+
+  var speed = 0.5;
+  var x = 0;
+  var paused = false;
+  var halfWidth = 0;
+
+  function getHalf() {
+    var items = track.querySelectorAll('.ticker-item');
+    var half = Math.floor(items.length / 2);
+    var w = 0;
+    var gap = parseFloat(getComputedStyle(track).gap) || 64;
+    for (var i = 0; i < half; i++) {
+      w += items[i].offsetWidth + gap;
+    }
+    return w;
+  }
+
+  function init() {
+    halfWidth = getHalf();
+    track.style.transform = 'translateX(0px)';
+    animate();
+  }
+
+  function animate() {
+    if (!paused) {
+      x -= speed;
+      if (Math.abs(x) >= halfWidth) {
+        x = 0;
+      }
+      track.style.transform = 'translateX(' + x + 'px)';
+    }
+    requestAnimationFrame(animate);
+  }
+
+  track.addEventListener('mouseenter', function() { paused = true; });
+  track.addEventListener('mouseleave', function() { paused = false; });
+
+  window.addEventListener('load', init);
+  window.addEventListener('resize', function() { halfWidth = getHalf(); });
+})();
+</script>
 
 </body>
 </html>

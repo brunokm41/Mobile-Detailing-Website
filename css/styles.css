@@ -25,7 +25,7 @@
 
 :root {
   /* Brand */
-  --blue:        #00AFEF;
+  --blue:        #D3AF37;
   --blue-light:  #33C3F5;
   --blue-dim:    rgba(0,175,239,0.1);
 
@@ -36,7 +36,7 @@
   --ink-4:       #1C2733;
 
   /* Light palette (content sections) */
-  --paper:       #F4F6F8;
+  --paper:       #ffffff;
   --paper-2:     #EAECEF;
   --paper-3:     #E0E4E8;
 
@@ -44,7 +44,7 @@
   --text-dark:   #1A2330;
   --text-body:   #3D4E5C;
   --text-muted:  #6B7D8F;
-  --text-light:  #D4DCE4;
+  --text-light:  #ffffff;
   --text-xlight: #8A9BAC;
 
   /* Borders */
@@ -122,13 +122,13 @@ body {
 .dropdown {
   display: none;
   position: absolute;
-  top: calc(100% + 1rem);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   list-style: none;
   min-width: 240px;
   z-index: 300;
-  padding-top: 0.5rem;
+  padding-top: 0.75rem;
 }
 
 .dropdown::before {
@@ -212,7 +212,7 @@ body {
 }
 
 /* Subtle grid overlay */
-.hero::before {
+/* .hero::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -221,7 +221,7 @@ body {
     linear-gradient(90deg, var(--border-dark) 1px, transparent 1px);
   background-size: 80px 80px;
   pointer-events: none;
-}
+} */
 
 /* Blue radial glow */
 .hero::after {
@@ -250,7 +250,7 @@ body {
 }
 
 .hero-logo {
-  height: 72px;
+  height: 62px;
   width: auto;
   display: block;
   margin: 0 auto 3rem;
@@ -757,6 +757,46 @@ a.contact-val:hover { color: var(--blue); }
 .form-select option { background: var(--ink-2); }
 
 .form-textarea { resize: vertical; min-height: 110px; }
+
+
+/* ============================================================
+   10b. CLIENT LOGO TICKER
+   ============================================================ */
+
+.ticker {
+  background: var(--ink-2);
+  border-top: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
+  padding: 1.75rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.ticker::before,
+.ticker::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; width: 140px;
+  z-index: 2; pointer-events: none;
+}
+.ticker::before { left: 0; background: linear-gradient(to right, var(--ink-2), transparent); }
+.ticker::after  { right: 0; background: linear-gradient(to left, var(--ink-2), transparent); }
+
+.ticker-track {
+  display: flex; align-items: center;
+  gap: 4rem; will-change: transform;
+}
+.ticker-track:hover { animation-play-state: paused; }
+
+.ticker-item { display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+.ticker-item img {
+  height: 32px; width: auto;
+  opacity: 0.4;
+  filter: grayscale(100%) brightness(2);
+  transition: opacity 0.25s, filter 0.25s;
+}
+.ticker-item img:hover { opacity: 0.9; filter: grayscale(0%) brightness(1); }
 
 
 /* ============================================================
