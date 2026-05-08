@@ -300,7 +300,7 @@ body {
 }
 
 .hero-scroll span {
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-xlight);
@@ -308,8 +308,8 @@ body {
 }
 
 .hero-scroll-line {
-  width: 1px;
-  height: 40px;
+  width: 4px;
+  height: 50px;
   background: linear-gradient(to bottom, var(--border-dark), transparent);
   animation: scrollPulse 2s ease-in-out infinite;
 }
