@@ -9,9 +9,9 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      #--blue: #00AFEF; --gold-light: #4DCAF5; --dark: #07090C;
-      --dark-3: #131920; --text: #cacaca; --text-muted: #888880;
-      --border: rgba(0,175,239,0.15);
+      --gold: #C9A84C; --gold-light: #E2C47A; --dark: #0A0A0A;
+      --dark-3: #1A1A1A; --text: #cacaca; --text-muted: #888880;
+      --border: rgba(201,168,76,0.2);
     }
     html, body { height: 100%; }
     body {
@@ -22,11 +22,11 @@
     }
     .bg-lines {
       position: fixed; inset: 0; opacity: 0.03; pointer-events: none;
-      background-image: repeating-linear-gradient(90deg, #00AFEF 0px, #00AFEF 1px, transparent 1px, transparent 60px);
+      background-image: repeating-linear-gradient(90deg, #C9A84C 0px, #C9A84C 1px, transparent 1px, transparent 60px);
     }
     .bg-glow {
       position: fixed; inset: 0; pointer-events: none;
-      background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(0,175,239,0.05) 0%, transparent 70%);
+      background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);
     }
     .card {
       position: relative; z-index: 2; text-align: center;
@@ -40,14 +40,14 @@
     }
     .logo { margin-bottom: 2rem; display: flex; justify-content: center; }
     .logo img { height: 48px; width: auto; display: block; margin: 0 auto; }
-    .logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.12em; color: var(--blue); }
-    .divider { width: 40px; height: 1px; background: var(--blue); margin: 0 auto 2rem; }
+    .logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.12em; color: var(--gold); }
+    .divider { width: 40px; height: 1px; background: var(--gold); margin: 0 auto 2rem; }
     
     .eyebrow { 
         font-size: 0.72rem; 
         letter-spacing: 0.2em; 
         text-transform: uppercase; 
-        color: var(--blue); 
+        color: var(--gold); 
         margin-bottom: 2rem; 
     }
     
@@ -63,7 +63,7 @@
     p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 2.5rem; }
     .contact-row { display: flex; align-items: center; justify-content: center; gap: 0.6rem; font-size: 1.1rem; font-weight: 400; color: var(--text-muted); padding: 0.75rem 0; border-top: 1px solid rgba(255,255,255,0.05); }
     .contact-row:last-of-type { border-bottom: 1px solid rgba(255,255,255,0.05); }
-    .contact-row a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+    .contact-row a { color: var(--gold); text-decoration: none; transition: color 0.2s; }
     .contact-row a:hover { color: var(--gold-light); }
     .contact-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); opacity: 0.6; min-width: 50px; text-align: right; }
     .footer-note { margin-top: 2rem; font-size: 0.72rem; color: var(--text-muted); opacity: 0.4; letter-spacing: 0.06em; }
@@ -74,7 +74,7 @@
   <div class="bg-glow"></div>
   <div class="card">
     <div class="logo">
-      <img src="images/new_logo_horizontal.svg" alt="Mobile Detailing Tauranga"
+      <img src="images/logo.svg" alt="Mobile Detailing Tauranga"
            onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';" />
       <div class="logo-text" style="display:none;">Mobile Detailing Tauranga</div>
     </div>
