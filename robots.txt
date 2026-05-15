@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mobiledetailing.co.nz/sitemap.xml
