@@ -110,7 +110,7 @@ body {
   transition: color 0.2s;
 }
 
-.nav-links a:hover { color: var(--text-light); }
+.nav-links a:hover { color: var(--yellow); }
 
 /* Dropdown */
 .has-dropdown { position: relative; }
@@ -881,7 +881,7 @@ a.contact-val:hover { color: var(--blue); }
     height: 100%;
   }
 
-  .work-item--large { flex: 1.6; }
+  /* .work-item--large { flex: 1.6; } */
 }
 
 
