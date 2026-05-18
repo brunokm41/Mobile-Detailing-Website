@@ -191,7 +191,7 @@ body {
   display: block;
   width: 22px;
   height: 1px;
-  background: var(--text-light);
+  background: var(--yellow);
   transition: opacity 0.2s;
 }
 
