@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Detail | Mobile Detailing Tauranga</title>
+  <meta name="description" content="Book a mobile car detail in Tauranga, Mount Maunganui, Papamoa or Te Puke. Fill in the form and we'll confirm within 24 hours." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mobiledetailing.co.nz/contact.html" />
+  <meta property="og:title" content="Book a Detail | Mobile Detailing Tauranga" />
+  <meta property="og:description" content="Book a mobile car detail in Tauranga & Bay of Plenty. We come to you." />
+  <meta property="og:url" content="https://mobiledetailing.co.nz/contact.html" />
+  <meta property="og:locale" content="en_NZ" />
+  <meta name="geo.region" content="NZ-BOP" />
+  <meta name="geo.placename" content="Tauranga, Bay of Plenty, New Zealand" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+
+    /* ── Page hero — matches dev.html style ── */
+    .page-hero {
+      min-height: 38vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 1.5rem 2.5rem;
+      background: var(--ink, #06090E);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 20% 80%, rgba(201,169,110,0.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .page-hero-inner {
+      position: relative;
+      z-index: 2;
+    }
+    .page-eyebrow {
+      font-size: 0.6rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--yellow, #C9A96E);
+      display: block;
+      margin-bottom: 0.6rem;
+      margin-top: 1.3rem;
+      animation: fadeUp 0.7s ease 0.1s both;
+    }
+    .page-h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 10vw, 5rem);
+      letter-spacing: 0.04em;
+      line-height: 0.92;
+      color: var(--cream, #E8E2D4);
+      animation: fadeUp 0.7s ease 0.25s both;
+    }
+    .page-h1 em {
+      font-style: normal;
+      color: var(--yellow, #C9A96E);
+    }
+    .page-sub {
+      font-size: 0.85rem;
+      color: var(--muted, #6A6458);
+      margin-top: 0.75rem;
+      line-height: 1.7;
+      animation: fadeUp 0.7s ease 0.4s both;
+    }
+
+    /* ── Photos strip ── */
+    .contact-photos {
+      display: flex;
+      gap: 2px;
+      height: 200px;
+    }
+    .contact-photo {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+    }
+    .contact-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .contact-photo:hover img { transform: scale(1.03); }
+
+    /* ── Form section ── */
+    .contact-section {
+      padding: 2.5rem 1.5rem 4rem;
+      background: var(--ink, #06090E);
+    }
+
+    .contact-form-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--yellow, #C9A96E);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .contact-form-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.8rem, 6vw, 2.4rem);
+      letter-spacing: 0.05em;
+      color: var(--cream, #E8E2D4);
+      margin-bottom: 1.75rem;
+      line-height: 1;
+    }
+
+    /* Form fields */
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+    .form-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+    .f-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .f-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted, #6A6458);
+    }
+    .f-req { color: var(--yellow, #C9A96E); }
+    .f-input,
+    .f-select,
+    .f-textarea {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--cream, #E8E2D4);
+      padding: 0.95rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem; /* larger for mobile tap comfort */
+      font-weight: 300;
+      outline: none;
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+      border-radius: 0;
+      transition: border-color 0.2s, background 0.2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .f-input:focus,
+    .f-select:focus,
+    .f-textarea:focus {
+      border-color: var(--yellow, #C9A96E);
+      background: rgba(201,169,110,0.04);
+    }
+    .f-input::placeholder,
+    .f-textarea::placeholder { color: rgba(106,100,88,0.4); }
+    .f-select option { background: #0D0E11; }
+    .f-textarea {
+      resize: none;
+      min-height: 110px;
+    }
+    .f-submit {
+      background: var(--yellow, #C9A96E);
+      color: #06090E;
+      border: none;
+      padding: 1.1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 0.5rem;
+      transition: background 0.2s, transform 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .f-submit:active { transform: scale(0.99); }
+    .f-submit:hover { background: #DFC08C; }
+
+    /* Success state */
+    .f-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      border: 1px solid rgba(201,169,110,0.15);
+    }
+    .f-success-check {
+      width: 48px; height: 48px;
+      border: 1px solid var(--yellow, #C9A96E);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem;
+      font-size: 1.25rem;
+      color: var(--yellow, #C9A96E);
+    }
+    .f-success-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.06em;
+      color: var(--cream, #E8E2D4);
+      margin-bottom: 0.5rem;
+    }
+    .f-success-text {
+      font-size: 0.87rem;
+      color: var(--muted, #6A6458);
+      line-height: 1.75;
+    }
+
+    /* ── Contact details below form ── */
+    .contact-details-section {
+      padding: 0 1.5rem 4rem;
+      background: var(--ink, #06090E);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .contact-details-inner {
+      padding-top: 2rem;
+    }
+    .contact-details-title {
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted, #6A6458);
+      margin-bottom: 1rem;
+    }
+    .c-row {
+      display: flex;
+      gap: 1.25rem;
+      align-items: baseline;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .c-row:first-child { border-top: 1px solid rgba(255,255,255,0.05); }
+    .c-lbl {
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted, #6A6458);
+      min-width: 48px;
+      flex-shrink: 0;
+    }
+    .c-val {
+      font-size: 0.87rem;
+      color: var(--cream, #E8E2D4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a.c-val:hover { color: var(--yellow, #C9A96E); }
+
+    /* ── Desktop ── */
+    @media (min-width: 780px) {
+      .page-hero {
+        min-height: 45vh;
+        padding: 8rem 4rem 3.5rem;
+        align-items: flex-end;
+      }
+      .contact-photos { height: 320px; }
+      .contact-section { padding: 4rem 4rem 5rem; }
+      .contact-details-section { padding: 0 4rem 5rem; }
+
+      /* Side by side on desktop */
+      .contact-desktop-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: start;
+      }
+      .contact-form-col {}
+      .contact-details-col {
+        position: sticky;
+        top: 100px;
+        border-top: none;
+        padding-top: 0;
+      }
+      .contact-details-section {
+        display: none; /* hidden — shown in sidebar instead */
+      }
+      .contact-details-col { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<nav id="nav">
+  <a href="dev.html" class="nav-logo">
+    <img src="images/logo_header.svg" alt="Mobile Detailing Tauranga" />
+  </a>
+  <ul class="nav-links">
+    <li class="has-dropdown">
+      <a href="detailing.html">Services</a>
+      <ul class="dropdown">
+        <li><a href="detailing.html">Interior & Exterior Detailing</a></li>
+        <li><a href="cut-and-polish.html">Cut & Polish</a></li>
+        <li><a href="ceramic-coating.html">Ceramic Coating</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-btn">Book Now</a>
+  <button class="nav-mobile-toggle" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+
+<!-- ====== PAGE HERO ====== -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <h1 class="page-h1">Book a<br/><em>Detail</em></h1>
+    <span class="page-eyebrow">Tauranga · Mount Maunganui · Bay of Plenty</span>
+    <p class="page-sub">Fill in the form below — we'll confirm within 24 hours.</p>
+  </div>
+</section>
+
+
+<!-- ====== PHOTOS ====== -->
+<div class="contact-photos">
+  <div class="contact-photo">
+    <img src="images/work/interior_detailing.webp" alt="Interior car detailing Tauranga" loading="lazy" />
+  </div>
+  <div class="contact-photo">
+    <img src="images/work/exterior_detailing.webp" alt="Exterior car detailing Tauranga" loading="lazy" />
+  </div>
+</div>
+
+
+<!-- ====== FORM + DETAILS ====== -->
+<section class="contact-section">
+  <div class="contact-desktop-layout">
+
+    <!-- FORM -->
+    <div class="contact-form-col">
+      <span class="contact-form-label">Booking Request</span>
+      <h2 class="contact-form-title">Your Details</h2>
+
+      <form class="form" id="contactForm" onsubmit="submitForm(event)">
+
+        <div class="f-group">
+          <label class="f-label">Name <span class="f-req">*</span></label>
+          <input type="text" class="f-input" placeholder="Your full name" required autocomplete="name" />
+        </div>
+
+        <div class="f-group">
+          <label class="f-label">Phone <span class="f-req">*</span></label>
+          <input type="tel" class="f-input" placeholder="021 XXX XXXX" required autocomplete="tel" inputmode="tel" />
+        </div>
+
+        <div class="form-2">
+          <div class="f-group">
+            <label class="f-label">Vehicle & Colour <span class="f-req">*</span></label>
+            <input type="text" class="f-input" placeholder="e.g. Hilux, Black" required />
+          </div>
+          <div class="f-group">
+            <label class="f-label">Registration <span class="f-req">*</span></label>
+            <input type="text" class="f-input" placeholder="e.g. ABC123" required autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="f-group">
+          <label class="f-label">Service Required <span class="f-req">*</span></label>
+          <select class="f-select" required>
+            <option value="" disabled selected>Select a service</option>
+            <optgroup label="Mobile Detailing">
+              <option>Express Wash — from $80</option>
+              <option>Full Detail — from $180</option>
+              <option>Premium Detail — from $320</option>
+            </optgroup>
+            <optgroup label="Workshop Services">
+              <option>Cut & Polish</option>
+              <option>Ceramic Coating — Essential (1 year)</option>
+              <option>Ceramic Coating — Professional (3 years)</option>
+              <option>Ceramic Coating — Ultimate (5 years)</option>
+            </optgroup>
+            <option>Not sure — please advise</option>
+          </select>
+        </div>
+
+        <div class="f-group">
+          <label class="f-label">Your Location <span class="f-req">*</span></label>
+          <select class="f-select" required>
+            <option value="" disabled selected>Select your area</option>
+            <option>Tauranga</option>
+            <option>Mount Maunganui</option>
+            <option>Papamoa</option>
+            <option>Te Puke</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="f-group">
+          <label class="f-label">Comments <span style="color:var(--muted);font-size:0.58rem;letter-spacing:0.08em;">(optional)</span></label>
+          <textarea class="f-textarea" placeholder="Preferred date, any specific concerns, or anything else we should know..."></textarea>
+        </div>
+
+        <button type="submit" class="f-submit">Send Booking Request</button>
+
+      </form>
+
+      <!-- Success -->
+      <div class="f-success" id="formSuccess">
+        <div class="f-success-check">✓</div>
+        <div class="f-success-title">Request Sent</div>
+        <p class="f-success-text">Thanks — we'll be in touch within 24 hours to confirm your booking.</p>
+      </div>
+    </div>
+
+    <!-- DESKTOP SIDEBAR — contact details -->
+    <div class="contact-details-col" style="display:none;">
+      <span class="contact-details-title">Contact Details</span>
+      <div class="c-row">
+        <span class="c-lbl">Phone</span>
+        <a href="tel:021 087 39030" class="c-val">021 087 39030</a>
+      </div>
+      <div class="c-row">
+        <span class="c-lbl">Email</span>
+        <a href="mailto:info@mobiledetailing.co.nz" class="c-val">info@mobiledetailing.co.nz</a>
+      </div>
+      <div class="c-row">
+        <span class="c-lbl">Hours</span>
+        <span class="c-val">Mon – Sat, 7am – 6pm</span>
+      </div>
+      <div class="c-row">
+        <span class="c-lbl">Area</span>
+        <span class="c-val">Tauranga, Mount Maunganui & Bay of Plenty</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ====== CONTACT DETAILS (mobile — below form) ====== -->
+<div class="contact-details-section">
+  <div class="contact-details-inner">
+    <p class="contact-details-title">Or reach us directly</p>
+    <div class="c-row">
+      <span class="c-lbl">Phone</span>
+      <a href="tel:021 087 39030" class="c-val">021 087 39030</a>
+    </div>
+    <div class="c-row">
+      <span class="c-lbl">Email</span>
+      <a href="mailto:info@mobiledetailing.co.nz" class="c-val">info@mobiledetailing.co.nz</a>
+    </div>
+    <div class="c-row">
+      <span class="c-lbl">Hours</span>
+      <span class="c-val">Mon – Sat, 7am – 6pm</span>
+    </div>
+    <div class="c-row">
+      <span class="c-lbl">Area</span>
+      <span class="c-val">Tauranga, Mount Maunganui & Bay of Plenty</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <img src="images/new_logo_horizontal.svg" alt="Mobile Detailing Tauranga" class="footer-logo" />
+      <nav class="footer-nav">
+        <a href="detailing.html">Detailing</a>
+        <a href="cut-and-polish.html">Cut & Polish</a>
+        <a href="ceramic-coating.html">Ceramic Coating</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 Mobile Detailing Tauranga. All rights reserved.</span>
+      <span class="footer-location">Serving Tauranga, Mount Maunganui & Bay of Plenty</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function submitForm(e) {
+  e.preventDefault();
+  document.getElementById('contactForm').style.display = 'none';
+  var success = document.getElementById('formSuccess');
+  success.style.display = 'block';
+  success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+/* Show desktop sidebar on wide screens */
+(function() {
+  function checkWidth() {
+    var sidebar = document.querySelector('.contact-details-col');
+    if (sidebar) {
+      sidebar.style.display = window.innerWidth >= 780 ? 'block' : 'none';
+    }
+  }
+  checkWidth();
+  window.addEventListener('resize', checkWidth);
+})();
+</script>
+
+</body>
+</html>
