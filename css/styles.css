@@ -851,25 +851,23 @@ a.contact-val:hover { color: var(--blue); }
   overflow: hidden;
   position: relative;
   background: var(--black-2, #0D0E11);
+  aspect-ratio: 4 / 3;
+  width: 100%;
 }
 
 .work-item img {
   width: 100%;
-  height: 72vw;
+  height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
 }
 
-.work-item:hover img {
-  transform: scale(1.03);
-}
+.work-item:hover img { transform: scale(1.03); }
 
 /* Desktop — asymmetric layout */
 @media (min-width: 700px) {
-  .work-header {
-    padding: 5rem 4rem 3rem;
-  }
+  .work-header { padding: 5rem 4rem 3rem; }
 
   .work-grid {
     flex-direction: row;
@@ -878,16 +876,13 @@ a.contact-val:hover { color: var(--blue); }
 
   .work-item {
     flex: 1;
+    aspect-ratio: unset;
+    width: auto;
   }
 
-  .work-item--large {
-    flex: 1.6;
-  }
+  .work-item--large { flex: 1.6; }
 
-  .work-item img {
-    width: 100%;
-    height: 100%;
-  }
+  .work-item img { width: 100%; height: 100%; }
 }
 
 
