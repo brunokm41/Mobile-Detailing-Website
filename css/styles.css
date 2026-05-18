@@ -25,8 +25,10 @@
 
 :root {
   /* Brand */
-  --blue:        #D3AF37;
-  --blue-light:  #33C3F5;
+  --yellow:      #D3AF37;
+  --white:       #FFFFFF;
+  --blue:        #4c37d3;
+  --blue-light:  #3fa6e1;
   --blue-dim:    rgba(0,175,239,0.1);
 
   /* Dark palette (hero, footer, contact) */
@@ -261,13 +263,13 @@ body {
   font-size: clamp(4.5rem, 10vw, 8rem);
   line-height: 0.9;
   letter-spacing: 0.03em;
-  color: var(--text-light);
+  color: var(--white);
   margin-bottom: 1.75rem;
 }
 
 .hero-heading em {
   font-style: normal;
-  color: var(--blue);
+  color: var(--yellow);
 }
 
 .hero-sub {
@@ -322,7 +324,7 @@ body {
 /* Buttons */
 .btn-primary {
   display: inline-block;
-  background: var(--blue);
+  background: var(--yellow);
   color: var(--ink);
   border: none;
   padding: 0.875rem 2rem;
@@ -336,14 +338,15 @@ body {
   transition: background 0.2s, transform 0.15s;
 }
 
-.btn-primary:hover { background: var(--blue-light); transform: translateY(-1px); }
+.btn-primary:hover { background: var(--white); transform: translateY(-1px); }
 .btn-full { width: 100%; text-align: center; }
 
 .btn-ghost {
   display: inline-block;
   background: transparent;
-  color: var(--text-xlight);
-  border: 1px solid var(--border-dark);
+  color: var(--yellow);
+  /* border: 1px solid var(--border-dark); */
+  border: 1px solid var(--yellow);
   padding: 0.875rem 2rem;
   font-family: 'DM Sans', sans-serif;
   font-size: 0.75rem;
@@ -354,7 +357,7 @@ body {
   transition: border-color 0.2s, color 0.2s;
 }
 
-.btn-ghost:hover { border-color: var(--text-xlight); color: var(--text-light); }
+.btn-ghost:hover { border-color: var(--white); color: var(--white); }
 
 
 /* ============================================================
@@ -378,7 +381,7 @@ body {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 2rem;
   letter-spacing: 0.06em;
-  color: var(--blue);
+  color: var(--yellow);
   line-height: 1;
 }
 
