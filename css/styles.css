@@ -167,9 +167,9 @@ body {
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--blue);
+  color: var(--yellow);
   text-decoration: none;
-  border: 1px solid var(--blue);
+  border: 1px solid var(--yellow);
   padding: 0.5rem 1.25rem;
   transition: background 0.2s, color 0.2s;
 }
