@@ -428,7 +428,7 @@ body {
   margin-bottom: 0.75rem;
 }
 
-.label--blue { color: var(--blue); }
+.label--yellow { color: var(--yellow); }
 
 .section-title {
   font-family: 'Bebas Neue', sans-serif;
@@ -551,7 +551,7 @@ body {
 }
 
 .review-stars {
-  color: var(--blue);
+  color: var(--yellow);
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   margin-bottom: 1.25rem;
@@ -582,7 +582,7 @@ body {
   justify-content: center;
   font-size: 0.72rem;
   font-weight: 500;
-  color: var(--blue);
+  color: var(--yellow);
   flex-shrink: 0;
   border-radius: 50%;
 }
