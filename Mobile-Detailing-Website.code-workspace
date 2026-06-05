@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../Refreshed-Surfaces-Website"
 		}
 	],
 	"settings": {}
